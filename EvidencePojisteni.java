@@ -53,11 +53,14 @@ public class EvidencePojisteni {
                     pokracovani = sc.nextLine();
                     System.out.println("\n\n\n\n");
                     break;
-                // Vyhledání pojištěného podle PŘÍJMENÍ
+                // Vyhledání pojištěného podle JMÉNA a PŘÍJMENÍ
                 case "3":
-                    System.out.print("Zadejte příjmení hledaného pojištěného: ");
+                    System.out.print("Zadejte jméno hledaného pojištěného: ");
+                    String hledaneJmeno = sc.nextLine().trim();
+                    System.out.print("Zadejte příjmení: ");
                     String hledanePrijmeni = sc.nextLine().trim();
-                    ArrayList<Pojisteny> pojisteni = databaze.najdiPojistenehoPodlePrijmeni(hledanePrijmeni, true);
+                    // jen podle jména:
+                    ArrayList<Pojisteny> pojisteni = databaze.najdiPojisteneho(hledaneJmeno, hledanePrijmeni);
                     System.out.println("\nNalezení pojištění: ");
                     System.out.println("jméno\t\tpříjmení\tvěk\ttelefonní číslo");
                     for (Pojisteny z : pojisteni) {
@@ -66,6 +69,7 @@ public class EvidencePojisteni {
                     System.out.print("\nPokračujte libovolnou klávesou... ");
                     pokracovani = sc.nextLine();
                     System.out.println("\n\n\n\n");
+                    break;
                 // Ukončení programu
                 case "4":
                     System.out.print("Děkujeme za použití programu.\n\nLibovolnou klávesou program ukončíte... ");

@@ -72,21 +72,17 @@ import java.util.Collections;
             return pojisteni.size();
         }
 
-        // VOLBA 3 -----------------------------------------------------------------
-        // metoda vyhledávání záznamů podle PŘÍJMENÍ
+    // VOLBA 3 -----------------------------------------------------------------
+    // metoda nalezení záznamů podle JMÉNA a PŘÍJMENÍ
 
-        public ArrayList<Pojisteny> najdiPojistenehoPodlePrijmeni(String hledanePrijmeni, boolean dlePrijmeni) {
-            ArrayList<Pojisteny> nalezenePrijmeni = new ArrayList<>();
-            for (Pojisteny z : pojisteni) {
-                if ((dlePrijmeni && z.getPrijmeni().equals(hledanePrijmeni))) {
-                    nalezenePrijmeni.add(z);
-                }
+    public ArrayList<Pojisteny> najdiPojisteneho(String hledaneJmeno, String hledanePrijmeni) {
+        ArrayList<Pojisteny> nalezeneZaznamy = new ArrayList<>();
+        for (Pojisteny z : pojisteni) {
+            if ((z.getJmeno().equals(hledaneJmeno)) && (z.getPrijmeni().equals(hledanePrijmeni))) {
+                nalezeneZaznamy.add(z);
             }
-            return nalezenePrijmeni;
         }
-
-        // VOLBA 3 -----------------------------------------------------------------
-        // metoda vyhledávání záznamů podle PŘÍJMENÍ i JMÉNA
-        // dodělat...
+        return nalezeneZaznamy;
+    }
 
 }
