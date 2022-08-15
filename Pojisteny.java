@@ -28,7 +28,7 @@ public class Pojisteny {
     private int vek;
 
     /**
-     * Telefonní číslo
+     * Telefonní číslo 
      */
     private int telefonniCislo;
 
