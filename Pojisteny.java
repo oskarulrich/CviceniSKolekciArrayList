@@ -23,5 +23,20 @@ public class Pojisteny {
      */
     private int telefonniCislo;
 
+    /**
+     * Inicalizuje instanci Pojisteny
+     *
+     * @param jmeno
+     * @param prijmeni
+     * @param vek
+     * @param telefonniCislo
+     */
+    public Pojisteny(String jmeno, String prijmeni, int vek, int telefonniCislo) {
+        this.jmeno = jmeno;
+        this.prijmeni = prijmeni;
+        this.vek = vek;
+        this.telefonniCislo = telefonniCislo;
+    }
+
 
 }
