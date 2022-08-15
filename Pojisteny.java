@@ -1,4 +1,13 @@
 /**
+ *
+ * @author Oskar Ulrich
+ * ×××××××××××××××××××××××××××××××
+ * × Cvičení s kolekcí ArrayList ×
+ * ×××××××××××××××××××××××××××××××
+ */
+// package website.ulrich.evidencepojisteni;
+
+/**
  * Reprezentuje pojištěného v databázi pojištených
  */
 public class Pojisteny {

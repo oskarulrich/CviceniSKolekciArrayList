@@ -1,3 +1,12 @@
+/**
+ *
+ * @author Oskar Ulrich
+ * ×××××××××××××××××××××××××××××××
+ * × Cvičení s kolekcí ArrayList ×
+ * ×××××××××××××××××××××××××××××××
+ */
+// package website.ulrich.evidencepojisteni;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
