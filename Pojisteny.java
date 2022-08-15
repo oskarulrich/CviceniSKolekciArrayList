@@ -10,7 +10,7 @@
 /**
  * Reprezentuje pojištěného v databázi pojištených
  */
-public class Pojisteny {
+public class Pojisteny implements Comparable<Pojisteny> { // implementace interface
 
     /**
      * Jméno
@@ -73,6 +73,17 @@ public class Pojisteny {
     @Override
     public String toString() {
         return jmeno + "\t\t" + prijmeni + "\t\t" + vek + "\t" + telefonniCislo + "\n";
+    }
+
+    /**
+     * Nově přidaný záznam bude porovnaný a abecedně zařazený do ArrayListu podle parametru příjmení
+     *
+     * @param x bude porovnávaný s příjmením
+     * @return
+     */
+    @Override
+    public int compareTo(Pojisteny x) {
+        return this.prijmeni.compareTo(x.prijmeni);
     }
 
 }

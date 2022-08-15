@@ -54,7 +54,7 @@ public class Databaze {
      */
     public void pridejPojisteneho(Pojisteny pojisteny) {
         pojisteni.add(pojisteny);
-    // Collections.sort(pojisteni); // seřadí pojištěné abecedně podle příjmení
+        Collections.sort(pojisteni); // seřadí pojištěné abecedně podle příjmení
     }
 
     // VOLBA 2 -----------------------------------------------------------------
