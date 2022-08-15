@@ -21,7 +21,7 @@ public class EvidencePojisteni {
 
         // hlavní cyklus
         String volba = "";
-        while (!volba.equals("4")) {
+        while (!volba.equals("5")) {
             // výpis možností
             System.out.println("-----------------------------------------------");
             System.out.println("Evidence pojištěných");
@@ -30,9 +30,10 @@ public class EvidencePojisteni {
             System.out.println("Vyberte požadovanou akci: ");
             System.out.println("1 - Přidat nového pojištěného");
             System.out.println("2 - Vypsat všechny pojištěné");
-            System.out.println("3 - Vyhledat pojištěného");
-            System.out.println("4 - Konec");
-            System.out.print("Zadejte číslo 1 - 4... ");
+            System.out.println("3 - Vyhledat pojištěného podle PŘÍJMENÍ");
+            System.out.println("4 - Vyhledat pojištěného podle JMÉNA a PŘÍJMENÍ");
+            System.out.println("5 - Ukončení programu");
+            System.out.print("Zadejte číslo 1 - 5... ");
             volba = sc.nextLine().trim();
             System.out.println();
             // Reakce na volbu
@@ -62,12 +63,26 @@ public class EvidencePojisteni {
                     pokracovani = sc.nextLine();
                     System.out.println("\n\n\n\n");
                     break;
-                // Vyhledání pojištěného podle JMÉNA a PŘÍJMENÍ
+                // Vyhledání pojištěného podle PŘÍJMENÍ
                 case "3":
+                    System.out.print("Zadejte příjmení hledaného pojištěného: ");
+                    String hledanePrijmeni = sc.nextLine().trim();
+                    ArrayList<Pojisteny> pojisteniPodlePrijmeni = databaze.najdiPojistenehoPodlePrijmeni(hledanePrijmeni, true);
+                    System.out.println("\nNalezení pojištění: ");
+                    System.out.println("jméno\t\tpříjmení\tvěk\ttelefonní číslo");
+                    for (Pojisteny z : pojisteniPodlePrijmeni) {
+                        System.out.print(z);
+                    }
+                    System.out.print("\nPokračujte libovolnou klávesou... ");
+                    pokracovani = sc.nextLine();
+                    System.out.println("\n\n\n\n");
+                    break;
+                // Vyhledání pojištěného podle JMÉNA a PŘÍJMENÍ
+                case "4":
                     System.out.print("Zadejte jméno hledaného pojištěného: ");
                     String hledaneJmeno = sc.nextLine().trim();
                     System.out.print("Zadejte příjmení: ");
-                    String hledanePrijmeni = sc.nextLine().trim();
+                    hledanePrijmeni = sc.nextLine().trim();
                     // jen podle jména:
                     ArrayList<Pojisteny> pojisteni = databaze.najdiPojisteneho(hledaneJmeno, hledanePrijmeni);
                     System.out.println("\nNalezení pojištění: ");
@@ -80,7 +95,7 @@ public class EvidencePojisteni {
                     System.out.println("\n\n\n\n");
                     break;
                 // Ukončení programu
-                case "4":
+                case "5":
                     System.out.print("Děkujeme za použití programu.\n\nLibovolnou klávesou program ukončíte... ");
                     pokracovani = sc.nextLine();
                     System.out.println("\n\n\n\n");
