@@ -59,13 +59,13 @@ public class EvidencePojisteni {
                     String hledaneJmeno = sc.nextLine().trim();
                     System.out.print("Zadejte příjmení: ");
                     String hledanePrijmeni = sc.nextLine().trim();
-                    // jen podle jména:
-                    ArrayList<Pojisteny> pojisteni = databaze.najdiPojisteneho(hledaneJmeno, hledanePrijmeni);
-                    System.out.println("\nNalezení pojištění: ");
-                    System.out.println("jméno\t\tpříjmení\tvěk\ttelefonní číslo");
-                    for (Pojisteny z : pojisteni) {
-                        System.out.print(z);
-                    }
+    //                // hledání podle jména a příjmení
+    //                ArrayList<Pojisteny> pojisteni = databaze.najdiPojisteneho(hledaneJmeno, hledanePrijmeni);
+    //                System.out.println("\nNalezení pojištění: ");
+    //                System.out.println("jméno\t\tpříjmení\tvěk\ttelefonní číslo");
+    //                for (Pojisteny z : pojisteni) {
+    //                    System.out.print(z);
+    //                }
                     System.out.print("\nPokračujte libovolnou klávesou... ");
                     pokracovani = sc.nextLine();
                     System.out.println("\n\n\n\n");
@@ -82,7 +82,7 @@ public class EvidencePojisteni {
                 // Chybná volba
                 default:
                     System.out.print("Neplatné zadání. \n\nStiskněte libovolnou klávesu a opakujte výběr akce... ");
-                    pokracovani = sc.nextLine();
+        //            pokracovani = sc.nextLine();
                     System.out.println("\n\n\n\n");
                     break;
             }
