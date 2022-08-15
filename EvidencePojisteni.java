@@ -53,23 +53,19 @@ public class EvidencePojisteni {
                     pokracovani = sc.nextLine();
                     System.out.println("\n\n\n\n");
                     break;
-                // Vyhledání pojištěného ------------------------------ jen podle jména, dodělat!!!
+                // Vyhledání pojištěného podle PŘÍJMENÍ
                 case "3":
-                    System.out.print("Zadejte jméno hledaného pojištěného: ");
-                    String hledaneJmeno = sc.nextLine().trim();
-                    System.out.print("Zadejte příjmení: ");
+                    System.out.print("Zadejte příjmení hledaného pojištěného: ");
                     String hledanePrijmeni = sc.nextLine().trim();
-    //                // hledání podle jména a příjmení
-    //                ArrayList<Pojisteny> pojisteni = databaze.najdiPojisteneho(hledaneJmeno, hledanePrijmeni);
-    //                System.out.println("\nNalezení pojištění: ");
-    //                System.out.println("jméno\t\tpříjmení\tvěk\ttelefonní číslo");
-    //                for (Pojisteny z : pojisteni) {
-    //                    System.out.print(z);
-    //                }
+                    ArrayList<Pojisteny> pojisteni = databaze.najdiPojistenehoPodlePrijmeni(hledanePrijmeni, true);
+                    System.out.println("\nNalezení pojištění: ");
+                    System.out.println("jméno\t\tpříjmení\tvěk\ttelefonní číslo");
+                    for (Pojisteny z : pojisteni) {
+                        System.out.print(z);
+                    }
                     System.out.print("\nPokračujte libovolnou klávesou... ");
                     pokracovani = sc.nextLine();
                     System.out.println("\n\n\n\n");
-                    break;
                 // Ukončení programu
                 case "4":
                     System.out.print("Děkujeme za použití programu.\n\nLibovolnou klávesou program ukončíte... ");
@@ -82,7 +78,7 @@ public class EvidencePojisteni {
                 // Chybná volba
                 default:
                     System.out.print("Neplatné zadání. \n\nStiskněte libovolnou klávesu a opakujte výběr akce... ");
-        //            pokracovani = sc.nextLine();
+                    pokracovani = sc.nextLine();
                     System.out.println("\n\n\n\n");
                     break;
             }

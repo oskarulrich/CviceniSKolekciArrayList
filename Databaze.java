@@ -34,7 +34,7 @@ import java.util.Collections;
             return "" + pojisteni;
         }
 
-        //  METODY - PRÁCE S DATABÁZÍ
+        // METODY - PRÁCE S DATABÁZÍ
 
         // VOLBA 1 -----------------------------------------------------------------
 
@@ -45,7 +45,7 @@ import java.util.Collections;
          */
         public void pridejPojisteneho(Pojisteny pojisteny) {
             pojisteni.add(pojisteny);
-    //        Collections.sort(pojisteni); // seřadí pojištěné abecedně podle příjmení
+        // Collections.sort(pojisteni); // seřadí pojištěné abecedně podle příjmení
         }
 
         // VOLBA 2 -----------------------------------------------------------------
@@ -73,12 +73,20 @@ import java.util.Collections;
         }
 
         // VOLBA 3 -----------------------------------------------------------------
+        // metoda vyhledávání záznamů podle PŘÍJMENÍ
 
-        // metoda nalezení záznamů podle JMÉNA a PRIJMENI......................................
+        public ArrayList<Pojisteny> najdiPojistenehoPodlePrijmeni(String hledanePrijmeni, boolean dlePrijmeni) {
+            ArrayList<Pojisteny> nalezenePrijmeni = new ArrayList<>();
+            for (Pojisteny z : pojisteni) {
+                if ((dlePrijmeni && z.getPrijmeni().equals(hledanePrijmeni))) {
+                    nalezenePrijmeni.add(z);
+                }
+            }
+            return nalezenePrijmeni;
+        }
 
-
-
-
-
+        // VOLBA 3 -----------------------------------------------------------------
+        // metoda vyhledávání záznamů podle PŘÍJMENÍ i JMÉNA
+        // dodělat...
 
 }
