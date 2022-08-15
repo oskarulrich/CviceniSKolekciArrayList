@@ -28,7 +28,7 @@ public class Pojisteny implements Comparable<Pojisteny> { // implementace interf
     private int vek;
 
     /**
-     * Telefonní číslo
+     * Telefonní číslo 
      */
     private int telefonniCislo;
 
