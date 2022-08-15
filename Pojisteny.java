@@ -39,6 +39,24 @@ public class Pojisteny {
     }
 
     /**
+     * Vrátí jméno
+     *
+     * @return jmeno
+     */
+    public String getJmeno() {
+        return jmeno;
+    }
+
+    /**
+     * Vrátí příjmení
+     *
+     * @return prijmeni
+     */
+    public String getPrijmeni() {
+        return prijmeni;
+    }
+
+    /**
      * Vrátí jako String vybrané paramatery instance Pojisteny
      *
      * @return Pojisteny
