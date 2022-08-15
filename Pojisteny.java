@@ -38,5 +38,14 @@ public class Pojisteny {
         this.telefonniCislo = telefonniCislo;
     }
 
+    /**
+     * Vrátí jako String vybrané paramatery instance Pojisteny
+     *
+     * @return Pojisteny
+     */
+    @Override
+    public String toString() {
+        return jmeno + "\t\t" + prijmeni + "\t\t" + vek + "\t" + telefonniCislo + "\n";
+    }
 
 }
